@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ResumeTracker</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link href="/static/css/style.css" type="text/css" rel="stylesheet" >
+    <link href="/static/css/dashboard.css" type="text/css" rel="stylesheet">
+
+
+
+</head>
+<body>
+
+
+<header>
+    <h1> ResumeTracker </h1>
+
+    <a href="/dashboard"  class="btn btn-warning" >Home</a>
+
+    <a href="/add_application" class="btn btn-primary" role="button">+ Add Application</a>
+    <a href="#" class="btn btn-default "   role="button">
+        <i class="fas fa-search"></i>
+        Search</a>
+    <a href="#" class="btn btn-default" role="button">
+        <i style="font-size:10px" class="fa">&#xf0b0;</i>
+        Filter</a>
+    <a href="/logout"  class="btn btn-danger" >Logout</a>
+    &nbsp;
+
+
+</header>
+
+    <div style="text-align: center">
+
+        <h2 style="margin-left: 20px; font-family: Cambria">Welcome {{ username }}</h2>
+        <p style="margin-left: 20px; font-weight: lighter"> Track all your Job Applications in one place </p>
+
+    </div>
+
+<div class="cards">
+    &nbsp;
+
+    <div class="card">
+
+      <p>Total Applications</p>
+        {% for i in stats %}
+            <h3>{{ i[0] }}</h3>
+        {% endfor %}
+    </div>
+
+    <div class="card">
+        <p>Interviews</p>
+        {% for i in stats %}
+            <h3>{{ i[1] }}</h3>
+        {% endfor %}
+
+
+    </div>
+
+    <div class="card">
+        <p>Selected</p>
+        {% for i in stats %}
+            <h3>{{ i[2] }}</h3>
+        {% endfor %}
+
+    </div>
+
+    <div class="card">
+        <p>Rejected</p>
+
+        {% for i in stats %}
+            <h3>{{ i[3] }}</h3>
+        {% endfor %}
+
+    </div>
+    &nbsp;
+
+</div>
+<br>
+
+<div class="tablehead">
+<table >
+    <tr>
+        <th>Company</th>
+        <th>Role</th>
+        <th>Date Applied</th>
+        <th>Status</th>
+        <th>Interview Date</th>
+        <th>Notes</th>
+        <th>Actions</th>
+    </tr>
+
+    {% if data %}
+        {% for row in  data  %}
+            <tr class="data">
+                <td>{{ row[1] }}</td>  <!-- company -->
+                <td>{{ row[2] }}</td>  <!-- role -->
+                <td>{{ row[3] }}</td>  <!-- date -->
+                <td>{{ row[4] }}</td>  <!-- status -->
+                <td>{{ row[5] }}</td>  <!-- interview -->
+                <td >{{ row[6] }} </td>
+
+                <td >
+                <a href="/edit/{{ row[0] }}" class="btn btn-info btn-sm">Edit</a>
+                <a href="/delete/{{ row[0] }}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+
+            </tr>
+
+        {% endfor %}
+    {% endif %}
+
+
+</table>
+</div>
+
+
+
+
+
+
+
+{% include 'footer.html' %}

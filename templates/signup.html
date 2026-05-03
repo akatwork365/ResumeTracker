@@ -1,0 +1,31 @@
+{% include 'head.html' %}
+
+
+
+    <form id="form" action="/signup_save" method="post" autocomplete="off">
+        <h3 style="color: white; font-weight: bold; ">SignUp</h3>
+
+        <input type="text" placeholder="Name" name="Name" required><br>
+        <input type="tel" placeholder="Mobile" name="Mobile" required><br>
+        <input type="email" placeholder="Email" name="Email" required><br>
+        Male<input type="radio"  name="Gender" value="Male" required>
+        Female<input type="radio" name="Gender" value="Female"><br>
+        <input type="password" placeholder="Password" name="Password" required>
+        <br>
+        {% with messages= get_flashed_messages()%}
+        {% if messages %}
+            {% for msg in messages %}
+                <p style="color: white; font-size: 15px; font-weight: bold" >{{ msg }}</p>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+
+        <br>
+        <button type="submit" class="btn btn-success">Submit</button>
+
+
+    </form>
+
+
+{% include 'footer.html' %}

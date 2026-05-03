@@ -1,0 +1,66 @@
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+    height: 150px;
+  width: 250px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+
+}
+
+.card h3 {
+
+  font-size: 28px;
+}
+
+.card p {
+  margin-top: 30px;
+  color: gray;
+}
+
+.cards {
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  gap: 20px;
+
+}
+
+
+
+/* your div controls width */
+.tablehead {
+    width: 100%;
+    padding: 0 10px;   /* small side spacing */
+    box-sizing: border-box;
+}
+
+/* table fills div */
+.tablehead table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+
+    border-spacing: 0 10px;
+}
+
+/* evenly spaced columns */
+.tablehead th {
+    width: calc(100% / 7);
+    background: linear-gradient(135deg, #5f9ea0, #3b7d7f);
+    color: #fff;
+    padding: 14px 10px;
+    text-align: center;
+}
+
+.data{
+    width: calc(100% / 7);
+    font-family: "Arial Black";
+
+
+    color: black;
+    padding: 20px 10px;
+    text-align: center;
+}
+

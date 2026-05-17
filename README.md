@@ -75,4 +75,4 @@ Feel free to fork this repository and submit pull requests.
 Aashutosh Kumar
 
 GitHub: https://www.github.com/akatwork365
-LinkedIn: https://www.linkedin.com/akatwork365
+LinkedIn: https://www.linkedin.com/in/akatwork365
